@@ -11,7 +11,10 @@
   </head>
 
   <body>
-    <%= render 'layouts/messages' %>
-    <%= yield %>
+    <%= render 'layouts/navbar' %>
+    <div class="container py-3">
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+    </div>
   </body>
 </html>
