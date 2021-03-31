@@ -1,1 +1,8 @@
 @import 'bootstrap/dist/css/bootstrap';
+
+.bg-home {
+  background: url(image_path('bg-home.jpeg'));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
