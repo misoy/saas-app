@@ -28,6 +28,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'figaro'
 gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
+gem 'ros-apartment', require: 'apartment'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
