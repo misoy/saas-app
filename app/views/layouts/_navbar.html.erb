@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <%= link_to "Project Management App", root_path, class: "navbar-brand" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -25,7 +25,14 @@
           </div>
         </li>
       </ul>
-      <button class="btn btn-success">Sign In</button>
+      <div>
+        <% if user_signed_in? %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+        <% else %>
+          <%= link_to "Sign In", new_user_session_path, class: "btn btn-success" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </nav>
