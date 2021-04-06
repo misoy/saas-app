@@ -7,9 +7,11 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <%= link_to "Projects", projects_path, class: "nav-link" %>
-        </li>
+        <% if private_tenant? %>
+          <li class="nav-item active">
+            <%= link_to "Projects", projects_path, class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
       <div>
         <% if user_signed_in? %>

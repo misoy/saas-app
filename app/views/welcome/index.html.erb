@@ -5,37 +5,39 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-sm-6 d-flex align-items-stretch justify-content-end">
-    <div class="card">
-      <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Free Plan</h5>
-        <div class="card-text">
-          <ul>
-            <li>Unlimited File Uploads</li>
-            <li>Responsive Design</li>
-            <li>Access Anywhere</li>
-            <li>1 Project</li>
-          </ul>
+<% if !private_tenant? %>
+  <div class="row">
+    <div class="col-sm-6 d-flex align-items-stretch justify-content-end">
+      <div class="card">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Free Plan</h5>
+          <div class="card-text">
+            <ul>
+              <li>Unlimited File Uploads</li>
+              <li>Responsive Design</li>
+              <li>Access Anywhere</li>
+              <li>1 Project</li>
+            </ul>
+          </div>
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary mt-auto" %>
         </div>
-        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary mt-auto" %>
+      </div>
+    </div>
+    <div class="col-sm-6 d-flex align-items-stretch justify-content-start">
+      <div class="card">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Premium Plan ($10)</h5>
+          <div class="card-text">
+            <ul>
+              <li>Unlimited File Uploads</li>
+              <li>Responsive Design</li>
+              <li>Access Anywhere</li>
+              <li>Unlimited Projects</li>
+            </ul>
+          </div>
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary mt-auto" %>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-sm-6 d-flex align-items-stretch justify-content-start">
-    <div class="card">
-      <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Premium Plan ($10)</h5>
-        <div class="card-text">
-          <ul>
-            <li>Unlimited File Uploads</li>
-            <li>Responsive Design</li>
-            <li>Access Anywhere</li>
-            <li>Unlimited Projects</li>
-          </ul>
-        </div>
-        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary mt-auto" %>
-      </div>
-    </div>
-  </div>
-</div>
+<% end %>

@@ -1,7 +1,8 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, :except => [:index]
-
+  before_action :require_private_tenant
+  
   # GET /projects or /projects.json
   def index
     @projects = Project.all
@@ -66,5 +67,12 @@ class ProjectsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def project_params
       params.require(:project).permit(:title)
+    end
+
+    def require_private_tenant
+      if !private_tenant?
+        flash[:alert] = "There are no projects found. Please visit your organization's website."
+        redirect_to root_path
+      end
     end
 end
